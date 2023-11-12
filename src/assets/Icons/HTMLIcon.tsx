@@ -2,7 +2,7 @@ import { IconContainer } from "../../components";
 
 const HTMLIcon = () => {
   return (
-    <IconContainer bgColor="#FFF1E9">
+    <IconContainer customBg="bg-[#FFF1E9]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
