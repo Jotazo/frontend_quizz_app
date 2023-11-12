@@ -12,11 +12,11 @@ const Results = () => {
   return (
     <PageContainer>
       {" "}
-      <h1 className="sm:max-w-[75%] text-[40px] sm:text-7xl leading-tight text-darkBlue dark:text-white">
+      <h1 className="sm:max-w-[85%] text-[40px] sm:text-7xl leading-tight text-darkBlue dark:text-white">
         Quiz completed{" "}
         <span className="font-[RubikMedium] font-bold">You scored...</span>
       </h1>
-      <section className="flex flex-col items-center bg-white dark:bg-darkBlueLight p-6 mt-8 mb-4 rounded-xl">
+      <section className="flex flex-col items-center bg-white dark:bg-darkBlueLight sm:gap-10 py-6 sm:py-12 mt-8 sm:mt-14 mb-4 sm:mb-8 rounded-xl sm:rounded-3xl">
         <div className="heading-s flex items-center !text-[16px] sm:!text-2xl gap-4 transition duration-500">
           {QUIZZ_ICONS[gameSelected!.title]}
           <p className="flex-1 text-darkBlue dark:text-white">
@@ -26,7 +26,7 @@ const Results = () => {
         <h2 className="text-[88px] sm:text-9xl font-bold text-darkBlue dark:text-white">
           {hits}
         </h2>
-        <p className="text-custGrey dark:text-lightBlue">
+        <p className="text-custGrey dark:text-lightBlue sm:text-2xl">
           out of {gameSelected?.questions.length}
         </p>
       </section>

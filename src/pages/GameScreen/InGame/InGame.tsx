@@ -23,18 +23,18 @@ const InGame = () => {
 
   return (
     <PageContainer>
-      <section className="flex flex-col gap-4 sm:gap-6 mb-8">
+      <section className="flex flex-col gap-4 sm:gap-10 mb-8 sm:mb-10">
         <ItalicText>
           Question {indexQuestion + 1} of {gameSelected?.questions.length}
         </ItalicText>
         <p className="text-[22px] sm:text-4xl text-darkBlue font-semibold dark:text-white">
           {question?.question}
         </p>
-        <div className="w-100 bg-white dark:bg-darkBlueLight h-4 sm:h-6 rounded-full p-[4px]">
-          <div className="w-100 bg-custPurple h-2 sm:h-4 rounded-full"></div>
+        <div className="w-100 bg-white dark:bg-darkBlueLight h-4 rounded-full p-[4px]">
+          <div className="w-100 bg-custPurple h-2 rounded-full"></div>
         </div>
       </section>
-      <ul className="flex flex-col gap-4 mb-6">
+      <ul className="flex flex-col gap-4 mb-6 sm:gap-6 sm:mb-8">
         {question?.options.map((option, index) => (
           <GameSelectionElement
             key={option}

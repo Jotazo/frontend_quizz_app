@@ -36,7 +36,7 @@ const GameSelectionElement: React.FC<Props> = ({
       customClasses={`game-selection-element ${styleSelected} ${styleCorrect} ${styleIncorrect} ${styleDisabled}`}
       {...props}
     >
-      <span className="bg-lightGrey p-3 px-4 sm:p-4 sm:px-6 rounded-lg text-custGrey transition duration-500">
+      <span className="bg-lightGrey p-3 px-4 sm:px-5 rounded-lg text-custGrey transition duration-500">
         {letter}
       </span>
       <p className="flex-1 text-darkBlue dark:text-white">{text}</p>
