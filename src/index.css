@@ -17,6 +17,10 @@
   src: url(./assets/fonts/static/Rubik-Italic.ttf);
 }
 
+body {
+  width: 100%;
+}
+
 /* Custom Styles */
 
 .display {
@@ -59,4 +63,8 @@
   font-family: RubikItalic;
   font-size: 12px;
   line-height: 150%;
+}
+
+.items-shadow {
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
 }
