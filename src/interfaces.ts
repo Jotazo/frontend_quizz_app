@@ -15,8 +15,10 @@ export interface AppStore {
   indexQuestion: number;
   optionSelected: null | string;
   isQuestionSubmitted: boolean;
+  gameFinished: boolean;
   hits: number;
   setGameSelected: (quizz: Quizz) => void;
   setOptionSelected: (optionSelected: string) => void;
+  onAddNewQuestion: () => void;
   onSubmitQuestion: () => void;
 }
