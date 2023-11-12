@@ -60,6 +60,7 @@ const InGame = () => {
           ))}
         </ul>
         <Button
+          noHover={isQuestionSubmitted}
           disabled={!optionSelected}
           text={buttonText}
           onClick={() => onSubmitQuestion()}
