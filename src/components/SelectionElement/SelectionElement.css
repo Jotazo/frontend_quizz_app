@@ -1,0 +1,27 @@
+.selection-element:hover > span {
+  @apply text-custPurple bg-custLightPurple;
+}
+
+.selection-element.selected {
+  @apply border-custPurple;
+}
+
+.selection-element.selected > span {
+  @apply bg-custPurple text-white;
+}
+
+.selection-element.selected.correct {
+  @apply border-custGreen;
+}
+
+.selection-element.selected.correct > span {
+  @apply bg-custGreen text-white;
+}
+
+.selection-element.selected.incorrect {
+  @apply border-custRed;
+}
+
+.selection-element.selected.incorrect > span {
+  @apply bg-custRed text-white;
+}
