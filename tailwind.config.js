@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         custPurple: "#A729F5",
+        custLightPurple: "#D394FA",
         darkBlue: "#313E51",
         darkBlueLight: "#3B4D66",
         custGrey: "#626C7F",
@@ -19,5 +20,6 @@ export default {
     },
   },
   plugins: [],
+  darkMode: 'class'
 }
 
