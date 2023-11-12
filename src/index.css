@@ -19,6 +19,7 @@
 
 body {
   @apply dark:bg-darkBlue bg-lightGrey h-screen transition duration-500;
+  font-family: RubikRegular;
   width: 100%;
 }
 
