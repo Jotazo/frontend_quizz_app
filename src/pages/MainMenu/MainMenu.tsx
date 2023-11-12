@@ -1,14 +1,12 @@
-import useAppStore from "../../store/useAppStore";
-
 import {
   ItalicText,
   MenuSelectionElement,
   PageContainer,
 } from "../../components";
 
-const MainMenu = () => {
-  const quizzes = useAppStore((state) => state.quizzes);
+import quizzes from "../../data/data.json";
 
+const MainMenu = () => {
   return (
     <PageContainer>
       <section className="mb-10 sm:mb-14">
