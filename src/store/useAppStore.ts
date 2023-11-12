@@ -48,6 +48,7 @@ const useAppStore = create<AppStore>()((set, get) => ({
       set(() => ({ isQuestionSubmitted: true }));
     }
   },
+  onResetGame: () => set(() => initialState),
 }));
 
 export default useAppStore;

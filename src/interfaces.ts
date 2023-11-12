@@ -21,4 +21,5 @@ export interface AppStore {
   setOptionSelected: (optionSelected: string) => void;
   onAddNewQuestion: () => void;
   onSubmitQuestion: () => void;
+  onResetGame: () => void;
 }
