@@ -23,31 +23,37 @@ const InGame = () => {
 
   return (
     <PageContainer>
-      <section className="flex flex-col gap-4 sm:gap-10 mb-8 sm:mb-10">
+      <section className="flex flex-col gap-4 sm:gap-10 mb-8 sm:mb-10 lg:w-[520px]">
         <ItalicText>
           Question {indexQuestion + 1} of {gameSelected?.questions.length}
         </ItalicText>
-        <p className="text-[22px] sm:text-4xl text-darkBlue font-semibold dark:text-white">
+        <p className="text-[22px] sm:text-4xl lg:text-2xl text-darkBlue font-semibold dark:text-white lg:w-[420px]">
           {question?.question}
         </p>
-        <div className="w-100 bg-white dark:bg-darkBlueLight h-4 rounded-full p-[4px]">
+        {/* <div className="w-100 lg:w-[420px] bg-white dark:bg-darkBlueLight h-4 rounded-full p-[4px] lg:mt-auto lg:mb-8">
           <div className="w-100 bg-custPurple h-2 rounded-full"></div>
-        </div>
+        </div> */}
       </section>
-      <ul className="flex flex-col gap-4 mb-6 sm:gap-6 sm:mb-8">
-        {question?.options.map((option, index) => (
-          <GameSelectionElement
-            key={option}
-            isCorrect={option === question.answer}
-            isSubmited={isQuestionSubmitted}
-            isSelected={optionSelected === option}
-            text={option}
-            letter={LETTERS[index]}
-            onClick={() => setOptionSelected(option)}
-          />
-        ))}
-      </ul>
-      <Button disabled={!optionSelected} text={buttonText} onClick={() => onSubmitQuestion()} />
+      <section className=" flex-1">
+        <ul className="flex flex-col gap-4 mb-6 sm:gap-6 sm:mb-8 lg:mb-6 lg:flex-1">
+          {question?.options.map((option, index) => (
+            <GameSelectionElement
+              key={option}
+              isCorrect={option === question.answer}
+              isSubmited={isQuestionSubmitted}
+              isSelected={optionSelected === option}
+              text={option}
+              letter={LETTERS[index]}
+              onClick={() => setOptionSelected(option)}
+            />
+          ))}
+        </ul>
+        <Button
+          disabled={!optionSelected}
+          text={buttonText}
+          onClick={() => onSubmitQuestion()}
+        />
+      </section>
     </PageContainer>
   );
 };

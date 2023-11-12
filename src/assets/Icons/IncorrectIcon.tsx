@@ -2,7 +2,7 @@ const IncorrectIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 sm:w-10"
+      className="w-6 sm:w-10 lg:w-6"
       fill="none"
       viewBox="0 0 40 40"
     >
