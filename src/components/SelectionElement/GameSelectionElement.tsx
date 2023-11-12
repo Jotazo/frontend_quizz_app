@@ -1,10 +1,11 @@
+import { HTMLProps } from "react";
 import { CorrectIcon, IncorrectIcon } from "../../assets/Icons";
 
 import SelectionElementContainer from "./SelectionElementContainer";
 
 import "./GameSelectionElement.css";
 
-interface Props {
+interface Props extends HTMLProps<HTMLDivElement> {
   letter?: string;
   text: string;
   isSelected?: boolean;
@@ -18,6 +19,7 @@ const GameSelectionElement: React.FC<Props> = ({
   isSelected,
   isCorrect,
   isSubmited,
+  ...props
 }) => {
   const isIncorrect = isSubmited && isSelected && !isCorrect;
   return (
@@ -25,6 +27,7 @@ const GameSelectionElement: React.FC<Props> = ({
       customClasses={`game-selection-element ${isSelected && "selected"} ${
         isCorrect && "correct"
       } ${isIncorrect && "incorrect"}`}
+      {...props}
     >
       <span className="bg-lightGrey p-3 px-4 sm:p-4 sm:px-6 rounded-lg text-custGrey transition duration-500">
         {letter}
