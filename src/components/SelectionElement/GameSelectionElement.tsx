@@ -6,7 +6,7 @@ import {
   IncorrectIcon,
 } from "../../assets/Icons";
 
-import SelectionElementContainer from "./SelectionElementContainer";
+import AnimatedSelectionElementContainer from "./AnimatedSelectionElemenContainer";
 
 import "./GameSelectionElement.css";
 
@@ -16,6 +16,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   isSelected?: boolean;
   isCorrect?: boolean;
   isSubmited?: boolean;
+  index: number;
 }
 
 const GameSelectionElement: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const GameSelectionElement: React.FC<Props> = ({
   isSelected,
   isCorrect,
   isSubmited,
+  index,
   ...props
 }) => {
   const isIncorrectSubmited = isSubmited && isSelected && !isCorrect;
@@ -36,7 +38,8 @@ const GameSelectionElement: React.FC<Props> = ({
   const styleDisabled = isSubmited ? "pointer-events-none" : "";
 
   return (
-    <SelectionElementContainer
+    <AnimatedSelectionElementContainer
+      index={index}
       customClasses={`game-selection-element ${styleSelected} ${styleCorrect} ${styleIncorrect} ${styleDisabled}`}
       {...props}
     >
@@ -44,10 +47,10 @@ const GameSelectionElement: React.FC<Props> = ({
         {letter}
       </span>
       <p className="flex-1 text-darkBlue dark:text-white lg:text-lg">{text}</p>
-      {(!isCorrectSubmited && !isIncorrectSubmited) && <IconPlaceholder />}
+      {!isCorrectSubmited && !isIncorrectSubmited && <IconPlaceholder />}
       {isCorrectSubmited && <CorrectIcon />}
       {isIncorrectSubmited && <IncorrectIcon />}
-    </SelectionElementContainer>
+    </AnimatedSelectionElementContainer>
   );
 };
 
