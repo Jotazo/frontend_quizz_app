@@ -5,7 +5,7 @@ interface Props {
 }
 
 const PageContainer: React.FC<Props> = ({ children }) => {
-  return <div className="mt-4 sm:mt-10">{children}</div>;
+  return <div className="mt-4 sm:mt-10 lg:flex">{children}</div>;
 };
 
 export default PageContainer;
