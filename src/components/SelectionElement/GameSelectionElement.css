@@ -1,0 +1,27 @@
+.game-selection-element:hover > span {
+  @apply text-custPurple bg-custLightPurple;
+}
+
+.game-selection-element.selected {
+  @apply border-custPurple;
+}
+
+.game-selection-element.selected > span {
+  @apply bg-custPurple text-white;
+}
+
+.game-selection-element.selected.correct {
+  @apply border-custGreen;
+}
+
+.game-selection-element.selected.correct > span {
+  @apply bg-custGreen text-white;
+}
+
+.game-selection-element.selected.incorrect {
+  @apply border-custRed;
+}
+
+.game-selection-element.selected.incorrect > span {
+  @apply bg-custRed text-white;
+}
