@@ -1,6 +1,6 @@
 import useAppStore from "../../store/useAppStore";
 
-import { MenuSelectionElement } from "../../components";
+import { ItalicText, MenuSelectionElement } from "../../components";
 
 const MainMenu = () => {
   const quizzes = useAppStore((state) => state.quizzes);
@@ -12,9 +12,7 @@ const MainMenu = () => {
           Welcome to the{" "}
           <span className="font-[RubikMedium] ">Frontend Quiz!</span>
         </h1>
-        <p className="font-[RubikItalic] text-custGrey dark:text-lightBlue mt-2 sm:text-2xl">
-          Pick a subject to get started.
-        </p>
+        <ItalicText>Pick a subject to get started.</ItalicText>
       </section>
       <ul className="flex flex-col gap-4">
         {quizzes.map((quizz) => (
