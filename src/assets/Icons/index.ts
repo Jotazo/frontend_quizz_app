@@ -1,3 +1,4 @@
+export { default as AccessibilityIcon } from "./AccessibilityIcon";
 export { default as CorrectIcon } from "./CorrectIcon";
 export { default as CSSIcon } from "./CSSIcon";
 export { default as HTMLIcon } from "./HTMLIcon";
