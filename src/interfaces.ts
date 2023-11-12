@@ -10,7 +10,13 @@ export interface Question {
 }
 
 export interface AppStore {
-  quizzes: Quizz[];
   gameSelected: null | Quizz;
+  question: null | Question;
+  indexQuestion: number;
+  optionSelected: null | string;
+  isQuestionSubmitted: boolean;
+  hits: number;
   setGameSelected: (quizz: Quizz) => void;
+  setOptionSelected: (optionSelected: string) => void;
+  onSubmitQuestion: () => void;
 }

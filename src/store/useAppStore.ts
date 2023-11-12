@@ -2,12 +2,34 @@ import { create } from "zustand";
 
 import { AppStore } from "../interfaces";
 
-import quizzes from "../data/data.json";
-
-const useAppStore = create<AppStore>()((set) => ({
-  quizzes,
+const useAppStore = create<AppStore>()((set, get) => ({
   gameSelected: null,
-  setGameSelected: (quizz) => set(() => ({ gameSelected: quizz })),
+  question: null,
+  indexQuestion: 0,
+  optionSelected: null,
+  isQuestionSubmitted: false,
+  hits: 0,
+  setGameSelected: (quizz) => {
+    const initialIndex = get().indexQuestion;
+    const question = quizz.questions[initialIndex];
+    set(() => ({ gameSelected: quizz, question }));
+  },
+  setOptionSelected: (optionSelected) => set(() => ({ optionSelected })),
+  onSubmitQuestion: () => {
+    const isSubmitted = get().isQuestionSubmitted;
+    if (isSubmitted) {
+      const newIndexQuestion = get().indexQuestion + 1;
+      const newQuestion = get().gameSelected?.questions[newIndexQuestion];
+      set(() => ({
+        question: newQuestion,
+        indexQuestion: newIndexQuestion,
+        optionSelected: null,
+        isQuestionSubmitted: false,
+      }));
+    } else {
+      set(() => ({ isQuestionSubmitted: true }));
+    }
+  },
 }));
 
 export default useAppStore;
